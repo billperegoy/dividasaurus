@@ -9,6 +9,15 @@ defmodule Dividasaurus.SampleTest do
 
   test "GET /" do
     navigate_to "/"
-    assert page_source =~ "Welcome to Phoenix"
+    signin_element = find_element(:class, "signin")
+    signup_element = find_element(:class, "signup")
+    assert element_displayed?(signin_element)
+    assert element_displayed?(signup_element)
+  end
+
+  test "link to signup page" do
+    navigate_to "/"
+    find_element(:class, "signup")
+      |> click
   end
 end

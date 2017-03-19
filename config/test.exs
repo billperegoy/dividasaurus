@@ -17,3 +17,6 @@ config :dividasaurus, Dividasaurus.Repo,
   database: "dividasaurus_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Configure hound to use phantomjs for feature tests
+config :hound, driver: "phantomjs"
